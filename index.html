@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Shared Rental Survival Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+        }
+        .section-title {
+            @apply text-3xl font-bold text-slate-800 mb-4 text-center;
+        }
+        .section-subtitle {
+            @apply text-lg text-slate-600 mb-8 text-center max-w-3xl mx-auto;
+        }
+        .card {
+            @apply bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300;
+        }
+        .checklist-item {
+            @apply flex items-start space-x-3 p-4 border-b border-slate-200;
+        }
+        .checklist-item input {
+            @apply mt-1 h-5 w-5 rounded border-gray-300 text-blue-600 focus:ring-blue-500 cursor-pointer;
+        }
+        .pill {
+            @apply inline-block bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full;
+        }
+        .warning-pill {
+            @apply inline-block bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full;
+        }
+        .success-pill {
+             @apply inline-block bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full;
+        }
+    </style>
+</head>
+<body class="text-slate-700">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-800">Tenant<span class="text-blue-600">Shield</span></div>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#legal-check" class="text-slate-600 hover:text-blue-600">Is it Legal?</a>
+                <a href="#checklist" class="text-slate-600 hover:text-blue-600">Checklist</a>
+                <a href="#money-matters" class="text-slate-600 hover:text-blue-600">Finances</a>
+                <a href="#red-flags" class="text-slate-600 hover:text-blue-600">Red Flags</a>
+                <a href="#disputes" class="text-slate-600 hover:text-blue-600">Disputes</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20 px-6">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Dubai Shared Rental Survival Guide</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto font-light">Navigate the maze of shared accommodation with confidence. Know your rights, avoid scams, and secure your home.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#checklist" class="bg-white text-blue-700 font-bold py-3 px-8 rounded-full hover:bg-slate-100 transition-colors duration-300 shadow-lg">View Tenant Checklist</a>
+                <a href="#legal-check" class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-700 transition-colors duration-300">Understand the Law</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-16 space-y-24">
+
+        <!-- Section 1: The Golden Rule: Is Your Rental Legal? -->
+        <section id="legal-check">
+            <h2 class="section-title">The Golden Rule: Is Your Rental Legal?</h2>
+            <p class="section-subtitle">The entire legality of your shared rental rests on one single, non-negotiable document. Understanding this is your first and most important line of defense.</p>
+            <div class="card max-w-4xl mx-auto">
+                <div class="text-center p-6">
+                    <svg class="mx-auto h-16 w-16 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <h3 class="text-2xl font-bold text-slate-800 mt-4">The Landlord's Written NOC is Mandatory</h3>
+                    <p class="mt-2 text-slate-600"><span class="font-bold">Article 24 of Dubai Law No. 26 of 2007</span> is crystal clear: A tenant cannot sublease any part of a property without the <span class="text-red-600 font-semibold">explicit written approval</span> of the property owner.</p>
+                    <p class="mt-4 text-sm text-slate-500">A text message, a verbal promise, or a handshake means nothing. You need a formal No-Objection Certificate (NOC) or a clause in the main tenancy contract.</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-b-xl">
+                    <h4 class="font-bold text-lg mb-4 text-center">The Chain of Legality</h4>
+                    <div class="grid md:grid-cols-2 gap-6 text-center">
+                        <div class="border-2 border-green-500 p-4 rounded-lg bg-green-50">
+                            <h5 class="font-bold text-green-700 mb-2">LEGAL PATH</h5>
+                            <p class="text-sm text-slate-600">Property Owner <span class="font-bold text-2xl mx-2 text-green-500">&rarr;</span> Provides Written NOC <span class="font-bold text-2xl mx-2 text-green-500">&rarr;</span> Primary Tenant <span class="font-bold text-2xl mx-2 text-green-500">&rarr;</span> You (Sub-tenant)</p>
+                        </div>
+                        <div class="border-2 border-red-500 p-4 rounded-lg bg-red-50">
+                            <h5 class="font-bold text-red-700 mb-2">ILLEGAL PATH</h5>
+                            <p class="text-sm text-slate-600">Primary Tenant <span class="font-bold text-2xl mx-2 text-red-500">&rarr;</span> You (Sub-tenant)</p>
+                            <p class="text-xs mt-2 text-red-600">(Without the owner's NOC, this entire arrangement is illegal and voidable)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Your Contract: Paper Tiger or Legal Shield? -->
+        <section id="contracts">
+            <h2 class="section-title">Your Contract: Paper Tiger or Legal Shield?</h2>
+            <p class="section-subtitle">Not all agreements are created equal. An informal contract for a room offers almost no real protection compared to a formal, government-registered tenancy.</p>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="card border-t-4 border-green-500">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">LEGAL & SECURE <span class="success-pill">Recommended</span></h3>
+                    <p class="text-sm text-slate-500 mb-4">Joint Tenancy or Approved Sublet with Landlord NOC & Ejari Registration</p>
+                    <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Legal Standing:</span> Fully valid and recognized by the Dubai Land Department (DLD).</span></li>
+                        <li class="flex items-start"><svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Eviction Risk:</span> Very low. Can only be evicted for legal reasons (e.g., not paying rent).</span></li>
+                        <li class="flex items-start"><svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Dispute Resolution:</span> Full access to the Rental Disputes Centre (RDC).</span></li>
+                        <li class="flex items-start"><svg class="h-6 w-6 text-green-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Security Deposit:</span> Legally protected. You can file a case at the RDC to get it back.</span></li>
+                    </ul>
+                </div>
+                <div class="card border-t-4 border-red-500">
+                     <h3 class="text-xl font-bold text-slate-800 mb-2">INFORMAL & RISKY <span class="warning-pill">High Risk</span></h3>
+                    <p class="text-sm text-slate-500 mb-4">Agreement with primary tenant only, without Landlord NOC</p>
+                     <ul class="space-y-3 text-slate-600">
+                        <li class="flex items-start"><svg class="h-6 w-6 text-red-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Legal Standing:</span> Voidable by the property owner. Not recognized by the DLD.</span></li>
+                        <li class="flex items-start"><svg class="h-6 w-6 text-red-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Eviction Risk:</span> Extremely high. Can be evicted immediately if the owner finds out.</span></li>
+                        <li class="flex items-start"><svg class="h-6 w-6 text-red-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Dispute Resolution:</span> NO access to the RDC. Your contract is worthless there.</span></li>
+                        <li class="flex items-start"><svg class="h-6 w-6 text-red-500 mr-2 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span><span class="font-semibold">Security Deposit:</span> At the mercy of the primary tenant. No legal way to recover it via tenancy law.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: The Tenant's Ultimate Checklist -->
+        <section id="checklist">
+            <h2 class="section-title">The Tenant's Ultimate Checklist</h2>
+            <p class="section-subtitle">Use this interactive checklist to protect yourself. Do not proceed with any rental until you can tick all the boxes in the "Non-Negotiable" section.</p>
+            <div class="card max-w-4xl mx-auto">
+                <div id="checklist-container">
+                    <h3 class="text-xl font-bold text-red-600 mb-4 p-4 bg-red-50 rounded-lg">Part 1: The Non-Negotiable Due Diligence</h3>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check1">
+                        <label for="check1" class="flex-grow">
+                            <span class="font-semibold">View the Primary Tenant's Ejari.</span>
+                            <p class="text-sm text-slate-500">Ask to see the main, official tenancy contract between the person you're dealing with and the property owner.</p>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check2">
+                        <label for="check2" class="flex-grow">
+                            <span class="font-semibold">View the Property Owner's Title Deed.</span>
+                            <p class="text-sm text-slate-500">This proves who legally owns the property. The name must match the landlord's name on the Ejari.</p>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check3">
+                        <label for="check3" class="flex-grow">
+                            <span class="font-semibold">Obtain the Owner's Written NOC.</span>
+                            <p class="text-sm text-slate-500">This is the most critical document. It's the owner's written permission for the sublet. If they can't provide it, walk away immediately.</p>
+                        </label>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-blue-600 mb-4 mt-8 p-4 bg-blue-50 rounded-lg">Part 2: The Agreement & Financials</h3>
+                     <div class="checklist-item">
+                        <input type="checkbox" id="check4">
+                        <label for="check4" class="flex-grow">
+                            <span class="font-semibold">Get a Written Agreement.</span>
+                            <p class="text-sm text-slate-500">Even if informal, it's better than nothing. It should detail all terms.</p>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check5">
+                        <label for="check5" class="flex-grow">
+                            <span class="font-semibold">Clarify All Costs.</span>
+                            <p class="text-sm text-slate-500">Is rent "all-inclusive"? What about DEWA, internet, cleaning fees? Get a clear breakdown in writing.</p>
+                        </label>
+                    </div>
+                    <div class="checklist-item">
+                        <input type="checkbox" id="check6">
+                        <label for="check6" class="flex-grow">
+                            <span class="font-semibold">Understand the Security Deposit.</span>
+                            <p class="text-sm text-slate-500">Know the exact amount and the conditions for its full return. Remember, in an illegal sublet, this money is at very high risk.</p>
+                        </label>
+                    </div>
+                     <div class="checklist-item">
+                        <input type="checkbox" id="check7">
+                        <label for="check7" class="flex-grow">
+                            <span class="font-semibold">Confirm House Rules.</span>
+                            <p class="text-sm text-slate-500">Discuss and document rules for guests, kitchen use, cleaning, noise, etc., before you move in.</p>
+                        </label>
+                    </div>
+                    <div class="checklist-item border-b-0">
+                        <input type="checkbox" id="check8">
+                        <label for="check8" class="flex-grow">
+                            <span class="font-semibold">Insist on Co-Occupant Registration.</span>
+                            <p class="text-sm text-slate-500">Ask the primary tenant to add you as a co-occupant via the Dubai REST app. This makes your presence legally visible to the authorities.</p>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Money Matters -->
+        <section id="money-matters">
+            <h2 class="section-title">Money Matters: Rent, Deposits & Hidden Fees</h2>
+            <p class="section-subtitle">The financial landscape of renting in Dubai is more than just the monthly rent. Be aware of all potential costs to budget effectively and avoid surprises.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3">Rent Increases</h3>
+                    <p class="mb-2"><span class="font-semibold">90-Day Notice:</span> Landlord must give 90 days' written notice before your contract renewal to increase rent.</p>
+                    <p class="mb-4"><span class="font-semibold">Smart Rental Index:</span> As of Jan 2025, all increases must comply with the DLD's Smart Rental Index. You can check this on the Dubai REST app.</p>
+                    <a href="https://dubailand.gov.ae/en/eservices/rental-index/" target="_blank" class="font-semibold text-blue-600 hover:underline">Check the Index &rarr;</a>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3">Security Deposits</h3>
+                    <p class="mb-2"><span class="font-semibold">Formal Standard:</span> 5% of annual rent (unfurnished) or 10% (furnished).</p>
+                    <p class="mb-2"><span class="font-semibold text-red-600">Informal Risk:</span> A small deposit (e.g., AED 500-1000) is a red flag for an illegal sublet. This money is extremely difficult to recover if withheld.</p>
+                    <p class="text-sm text-slate-500">Without an Ejari, you cannot use the RDC to claim your deposit back.</p>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-3">Other Major Fees</h3>
+                    <ul class="space-y-2">
+                        <li><span class="font-semibold">Agent Commission:</span> Typically 5% of annual rent.</li>
+                        <li><span class="font-semibold">DEWA Deposit:</span> AED 2,000 (refundable) for an apartment.</li>
+                        <li><span class="font-semibold">Housing Fee:</span> 5% of your annual Ejari rent, paid monthly via your DEWA bill.</li>
+                        <li><span class="font-semibold">Ejari Fee:</span> ~AED 220.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 7: When Things Go Wrong -->
+        <section id="disputes">
+            <h2 class="section-title">When Things Go Wrong: The Locked Door</h2>
+            <p class="section-subtitle">If you have a dispute with your landlord, there is only one place to go for a legally binding resolution: The Rental Disputes Resolution Centre (RDC). But there's a catch.</p>
+            <div class="card max-w-2xl mx-auto text-center">
+                <div class="p-8">
+                    <svg class="mx-auto h-20 w-20 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    <h3 class="text-3xl font-bold text-slate-800 mt-4">No Ejari, No Entry.</h3>
+                    <p class="mt-4 text-lg text-slate-600">The RDC will <span class="font-bold text-red-600">NOT</span> accept or hear any case without a valid, registered Ejari contract. This is an absolute rule.</p>
+                    <p class="mt-4 text-slate-500">Your informal room rental agreement is legally powerless at the RDC. This means you have no official recourse for withheld deposits, unfair eviction, or any other tenancy issue. You are on your own.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Market Red Flags -->
+        <section id="red-flags">
+            <h2 class="section-title">Market Red Flags: How to Spot a Bad Deal</h2>
+            <p class="section-subtitle">The informal rental market is full of pitfalls. Learn to recognize the warning signs before you commit your time and money.</p>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-2">Vague or Defensive "Landlord"</h3>
+                    <p>Refuses to show you the Title Deed, their Ejari, or the owner's NOC. Gets defensive when you ask for these documents. This is the biggest red flag.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-2">Suspicious Ad Language</h3>
+                    <p>Look out for terms like "partition" (which is illegal) or "bed space" (which often means illegal overcrowding). The more granular the offering, the higher the risk.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-2">Pressure to Pay Upfront</h3>
+                    <p>Scammers create a false sense of urgency, pressuring you to transfer a deposit to "secure" a room you haven't seen or for which you haven't verified the documents.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-2">Fake Agents & Ghost Listings</h3>
+                    <p>Never transfer money before viewing the property in person and verifying the agent's RERA credentials and the landlord's ownership documents.</p>
+                </div>
+                <div class="card">
+                    <h3 class="font-bold text-lg mb-2">The "Bait and Switch"</h3>
+                    <p>The actual living conditions are drastically different from the ad. More people, less clean, sudden new rules. What you see should be what you get.</p>
+                </div>
+                <div class="card bg-blue-600 text-white">
+                    <h3 class="font-bold text-lg mb-2">Your Most Powerful Tool</h3>
+                    <p class="text-xl">The ability to <span class="font-extrabold">WALK AWAY</span>. If a deal feels wrong or the paperwork isn't right, refuse it. Another, better opportunity will come along.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-8 px-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2025 TenantShield Dubai. All rights reserved.</p>
+            <p class="text-sm mt-2">Disclaimer: This website provides a summary of information based on Dubai's tenancy laws and market practices. It is for informational purposes only and does not constitute legal advice. You should always consult with a legal professional for your specific situation.</p>
+            <p class="text-xs mt-2">Last Updated: July 2025</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script to add a strikethrough to checked items
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (event) => {
+                    const label = event.target.nextElementSibling;
+                    if (event.target.checked) {
+                        label.classList.add('line-through', 'text-slate-400');
+                    } else {
+                        label.classList.remove('line-through', 'text-slate-400');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
