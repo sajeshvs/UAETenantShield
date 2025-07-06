@@ -10,14 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            --warning-gradient: linear-gradient(135deg, #ff9068 0%, #fd746c 100%);
-            --danger-gradient: linear-gradient(135deg, #ff416c 0%, #ff4b2b 100%);
-            --info-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --purple-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-            --card-shadow-hover: 0 20px 40px -5px rgba(0, 0, 0, 0.15), 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+            /* Primary Colors */
+            --primary-blue: #2563eb;
+            --primary-purple: #7c3aed;
+            --primary-gradient: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            
+            /* Accent Colors */
+            --success-green: #10b981;
+            --warning-amber: #f59e0b;
+            --danger-red: #ef4444;
+            
+            /* Neutral Colors */
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-900: #111827;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -157,6 +167,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-align: center;
         }
 
         .section-subtitle {
@@ -164,6 +175,7 @@
             color: #64748b;
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
 
         /* Enhanced Card System */
@@ -179,9 +191,14 @@
             overflow: hidden;
         }
 
+        /* Smooth hover effects */
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--card-shadow-hover);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
 
         .card::before {
@@ -315,6 +332,7 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
             color: #1e293b;
+            text-align: center;
         }
 
         .card-subtitle {
@@ -366,11 +384,6 @@
             color: #64748b;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-        };
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-gradient);
         }
 
         .card-grid {
@@ -400,6 +413,7 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0;
+            text-align: center;
         }
 
         /* Checklist Styling */
@@ -574,7 +588,159 @@
                 padding: 1rem;
             }
         }
-        /* Modal Styles */
+        /* Quick Start Guide Styling */
+        .quick-start-section {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+        }
+
+        .btn-action {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Progress Bar Styling */
+        .checklist-progress {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .progress-bar {
+            background: #e5e7eb;
+            border-radius: 1rem;
+            height: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            background: var(--success-gradient);
+            height: 100%;
+            border-radius: 1rem;
+            transition: width 0.5s ease;
+            position: relative;
+        }
+
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* FAQ Accordion Styling */
+        details {
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            overflow: hidden;
+        }
+
+        details[open] {
+            border-color: var(--primary-blue);
+        }
+
+        summary {
+            background: #f9fafb;
+            transition: background-color 0.3s ease;
+        }
+
+        summary:hover {
+            background: #f3f4f6;
+        }
+
+        details[open] summary {
+            background: #eff6ff;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .steps-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .step-card {
+                padding: 1.5rem;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.25rem;
+            }
+        }
         .modal {
             display: none !important;
             position: fixed;
@@ -631,6 +797,7 @@
             border-radius: 20px 20px 0 0;
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
 
         .modal-header::before {
@@ -851,6 +1018,79 @@
         .risk-high { color: #ea580c; background: #fed7aa; }
         .risk-medium { color: #ca8a04; background: #fef3c7; }
         .risk-low { color: #16a34a; background: #dcfce7; }
+
+        /* Quick Start Section */
+        .quick-start-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            margin: 2rem 0;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .step-number {
+            background: var(--primary-gradient);
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-action {
+            display: inline-block;
+            background: var(--success-gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 1.5rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn-action:hover {
+            background: var(--warning-gradient);
+        }
+
+        /* Loading states */
+        .btn-calculate:active {
+            transform: scale(0.98);
+        }
+
+        /* Success animations */
+        @keyframes checkmark {
+            0% { stroke-dashoffset: 100; }
+            100% { stroke-dashoffset: 0; }
+        }
     </style>
 </head>
 <body class="text-slate-700">
@@ -862,11 +1102,12 @@
                 Tenant<span class="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">Shield</span>
             </div>
             <div class="hidden md:flex space-x-8 items-center">
-                <a href="#legal-check" class="text-slate-600 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-blue-50">⚖️ Legal Check</a>
+                <a href="#quick-start" class="text-slate-600 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-blue-50">🚀 Quick Start</a>
+                <a href="#legal-essentials" class="text-slate-600 hover:text-blue-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-blue-50">⚖️ Legal</a>
+                <a href="#financial-planning" class="text-slate-600 hover:text-yellow-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-yellow-50">💰 Finance</a>
                 <a href="#checklist" class="text-slate-600 hover:text-green-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-green-50">✅ Checklist</a>
-                <a href="#money-matters" class="text-slate-600 hover:text-yellow-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-yellow-50">💰 Finances</a>
                 <a href="#red-flags" class="text-slate-600 hover:text-red-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-red-50">🚩 Red Flags</a>
-                <a href="#disputes" class="text-slate-600 hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-purple-50">⚡ Disputes</a>
+                <a href="#resources" class="text-slate-600 hover:text-purple-600 font-medium transition-all duration-300 hover:scale-105 px-3 py-2 rounded-lg hover:bg-purple-50">📚 Resources</a>
             </div>
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-slate-600 hover:text-blue-600 p-2 rounded-lg hover:bg-blue-50 transition-all duration-300">
@@ -921,59 +1162,157 @@
         <div class="absolute top-1/2 right-20 w-12 h-12 bg-purple-300 rounded-full opacity-20 animate-ping"></div>
     </section>
 
-    <main class="container mx-auto px-6 py-16 space-y-24">
-
-        <!-- Section 1: The Golden Rule: Is Your Rental Legal? -->
-        <section id="legal-check">
-            <h2 class="section-title">The Golden Rule: Is Your Rental Legal?</h2>
-            <p class="section-subtitle">The entire legality of your shared rental rests on one single, non-negotiable document. Understanding this is your first and most important line of defense.</p>
-            <div class="card max-w-4xl mx-auto">
-                <div class="text-center p-6">
-                    <div class="relative inline-block">
-                        <svg class="mx-auto h-20 w-20 text-red-500 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                        </svg>
-                        <div class="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-red-500 to-orange-500 rounded-full animate-ping"></div>
-                    </div>
-                    <h3 class="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mt-4">
-                        The Landlord's Written NOC is Mandatory
-                    </h3>
-                    <p class="mt-2 text-slate-600">
-                        <span class="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Article 24 of Dubai Law No. 26 of 2007</span> 
-                        is crystal clear: A tenant cannot sublease any part of a property without the 
-                        <span class="text-red-600 font-semibold bg-red-100 px-2 py-1 rounded">explicit written approval</span> 
-                        of the property owner.
-                    </p>
-                    <p class="mt-4 text-sm text-slate-500 bg-amber-50 p-3 rounded-lg">
-                        💬 A text message, a verbal promise, or a handshake means nothing. You need a formal No-Objection Certificate (NOC) or a clause in the main tenancy contract.
-                    </p>
+    <!-- Quick Start Guide (New) -->
+    <section id="quick-start" class="quick-start-section">
+        <div class="container">
+            <h2 class="section-title">Your 3-Step Safety Check</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Verify the Landlord</h3>
+                    <p>Check property ownership & NOC</p>
+                    <button class="btn-action" onclick="document.getElementById('legal-essentials').scrollIntoView({behavior: 'smooth'})">Start Check →</button>
                 </div>
-                <div class="bg-gradient-to-br from-slate-50 to-blue-50 p-6 rounded-b-xl">
-                    <h4 class="font-bold text-lg mb-4 text-center bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
-                        The Chain of Legality
-                    </h4>
-                    <div class="grid md:grid-cols-2 gap-6 text-center">
-                        <div class="border-2 border-green-400 p-6 rounded-xl bg-gradient-to-br from-green-50 to-emerald-50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                            <h5 class="font-bold text-green-700 mb-3 text-lg">✅ LEGAL PATH</h5>
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="bg-white p-3 rounded-lg shadow text-sm font-medium text-slate-700">Property Owner</div>
-                                <div class="text-green-500 text-2xl">⬇️</div>
-                                <div class="bg-white p-3 rounded-lg shadow text-sm font-medium text-slate-700">Written NOC</div>
-                                <div class="text-green-500 text-2xl">⬇️</div>
-                                <div class="bg-white p-3 rounded-lg shadow text-sm font-medium text-slate-700">Primary Tenant</div>
-                                <div class="text-green-500 text-2xl">⬇️</div>
-                                <div class="bg-green-100 p-3 rounded-lg shadow text-sm font-bold text-green-800">You (Protected)</div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Validate the Contract</h3>
+                    <p>Ensure Ejari registration eligibility</p>
+                    <button class="btn-action" onclick="openModal('modal1')">Learn How →</button>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Calculate True Costs</h3>
+                    <p>Include all fees & deposits</p>
+                    <button class="btn-action" onclick="openModal('rentCalculatorModal')">Calculate →</button>
+                </div>
+            </div>
+            
+            <!-- "Are you protected?" quiz -->
+            <div class="mt-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border-l-4 border-blue-500">
+                <h3 class="text-xl font-bold text-blue-800 mb-4 text-center">🤔 Are You Protected? Quick Assessment</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="quiz1" class="mr-3">
+                        <label for="quiz1" class="text-sm text-slate-700">I have seen the landlord's Ejari certificate</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="quiz2" class="mr-3">
+                        <label for="quiz2" class="text-sm text-slate-700">I have verified the property owner's Title Deed</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="quiz3" class="mr-3">
+                        <label for="quiz3" class="text-sm text-slate-700">I have the owner's written NOC for subletting</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="quiz4" class="mr-3">
+                        <label for="quiz4" class="text-sm text-slate-700">I understand all costs and fees involved</label>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <div id="quiz-result" class="text-sm font-semibold p-2 rounded hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-16 space-y-24">
+        <!-- Legal Essentials (Reorganized) -->
+        <section id="legal-essentials">
+            <h2 class="section-title">Legal Essentials</h2>
+            <p class="section-subtitle">Understand the documents and legal requirements that protect you as a tenant in Dubai.</p>
+            
+            <!-- The Golden Rule (Landlord NOC) -->
+            <div id="golden-rule" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                    The Golden Rule: Is Your Rental Legal?
+                </h3>
+                <div class="card max-w-4xl mx-auto">
+                    <div class="text-center p-6">
+                        <div class="relative inline-block">
+                            <svg class="mx-auto h-20 w-20 text-red-500 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-2xl font-bold bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent mt-4">
+                            The Landlord's Written NOC is Mandatory
+                        </h4>
+                        <p class="mt-2 text-slate-600">
+                            <span class="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Article 24 of Dubai Law No. 26 of 2007</span> 
+                            is crystal clear: A tenant cannot sublease any part of a property without the 
+                            <span class="text-red-600 font-semibold bg-red-100 px-2 py-1 rounded">explicit written approval</span> 
+                            of the property owner.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ejari Certificate -->
+            <div id="ejari-certificate" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Ejari Certificate: Your Legal Foundation
+                </h3>
+                <div class="card max-w-4xl mx-auto">
+                    <div class="text-center p-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-blue-600 mb-3">What is Ejari?</h4>
+                                <p class="text-sm text-slate-600 mb-4">Dubai's mandatory tenancy registration system. Every rental contract must be registered to be legally valid.</p>
+                                <button class="btn-action" onclick="openModal('modal1')">View Details →</button>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-purple-600 mb-3">Why It Matters</h4>
+                                <ul class="text-sm text-slate-600 space-y-1">
+                                    <li>• Required for RDC access</li>
+                                    <li>• Needed for DEWA connection</li>
+                                    <li>• Essential for visa sponsorship</li>
+                                    <li>• Proof of legal occupancy</li>
+                                </ul>
                             </div>
                         </div>
-                        <div class="border-2 border-red-400 p-6 rounded-xl bg-gradient-to-br from-red-50 to-pink-50 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                            <h5 class="font-bold text-red-700 mb-3 text-lg">❌ ILLEGAL PATH</h5>
-                            <div class="flex flex-col items-center space-y-3">
-                                <div class="bg-white p-3 rounded-lg shadow text-sm font-medium text-slate-700">Primary Tenant</div>
-                                <div class="text-red-500 text-2xl">⬇️</div>
-                                <div class="bg-red-100 p-3 rounded-lg shadow text-sm font-bold text-red-800">You (Vulnerable)</div>
-                                <div class="mt-4 text-xs text-red-600 bg-red-100 p-2 rounded italic">
-                                    ⚠️ Without owner's NOC, this entire arrangement is illegal and voidable
-                                </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contract Types Comparison -->
+            <div id="contract-types" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                    Contract Types: Legal vs Informal
+                </h3>
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto justify-items-center">
+                    <div class="card success-card w-full max-w-md">
+                        <h4 class="text-xl font-bold text-white mb-4 text-center">✅ LEGAL & SECURE</h4>
+                        <p class="text-white mb-4 text-center">Joint Tenancy or Approved Sublet with Landlord NOC</p>
+                        <div class="space-y-2 text-white">
+                            <div class="flex justify-between">
+                                <span>Legal Protection:</span>
+                                <span class="font-bold text-green-200">95%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Eviction Risk:</span>
+                                <span class="font-bold text-green-200">Low</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>RDC Access:</span>
+                                <span class="font-bold text-green-200">Full</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card danger-card w-full max-w-md">
+                        <h4 class="text-xl font-bold text-white mb-4 text-center">❌ INFORMAL & RISKY</h4>
+                        <p class="text-white mb-4 text-center">Agreement with primary tenant only, no NOC</p>
+                        <div class="space-y-2 text-white">
+                            <div class="flex justify-between">
+                                <span>Legal Protection:</span>
+                                <span class="font-bold text-red-200">5%</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Eviction Risk:</span>
+                                <span class="font-bold text-red-200">High</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>RDC Access:</span>
+                                <span class="font-bold text-red-200">None</span>
                             </div>
                         </div>
                     </div>
@@ -981,137 +1320,417 @@
             </div>
         </section>
 
-        <!-- Section 2: Your Contract: Paper Tiger or Legal Shield? -->
-        <section id="contracts">
-            <h2 class="section-title">Your Contract: Paper Tiger or Legal Shield?</h2>
-            <p class="section-subtitle">Not all agreements are created equal. An informal contract for a room offers almost no real protection compared to a formal, government-registered tenancy.</p>
-            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                <div class="card success-card card-floating card-interactive">
-                    <div class="flex items-center mb-4">
-                        <div class="card-icon">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                            </svg>
+        <!-- Financial Planning (Enhanced) -->
+        <section id="financial-planning">
+            <h2 class="section-title">Financial Planning</h2>
+            <p class="section-subtitle">Plan your rental budget with smart tools and avoid hidden costs.</p>
+            
+            <!-- Smart Rental Index 2025 -->
+            <div id="smart-index" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Smart Rental Index 2025
+                </h3>
+                <div class="card card-glow frame-bordered max-w-4xl mx-auto cursor-pointer" onclick="openModal('smartIndexModal')">
+                    <div class="text-center p-6">
+                        <h4 class="card-title text-center">What Changed on January 1, 2025?</h4>
+                        <div class="card-subtitle text-center">AI-Powered Rental Valuations</div>
+                        <div class="grid md:grid-cols-2 gap-6 mt-6">
+                            <div class="p-4 bg-gray-100 rounded-lg">
+                                <h5 class="font-bold text-slate-600 mb-2 text-center">OLD SYSTEM (Pre-2025)</h5>
+                                <p class="text-sm text-center">Simple area-based averages using the RERA Calculator</p>
+                            </div>
+                            <div class="p-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-lg">
+                                <h5 class="font-bold mb-2 text-center">NEW SYSTEM (2025+)</h5>
+                                <p class="text-sm text-center">AI-powered analysis considering building quality, maintenance, amenities, and location</p>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">LEGAL & SECURE</h3>
-                            <span class="inline-block bg-white bg-opacity-20 text-white text-xs font-semibold px-3 py-1 rounded-full mt-1">✨ Recommended</span>
-                        </div>
+                        <button class="btn-action mt-4">Check Rent Increase Compliance →</button>
                     </div>
-                    <p class="text-white mb-4 bg-white bg-opacity-10 p-3 rounded-lg">
-                        Joint Tenancy or Approved Sublet with Landlord NOC & Ejari Registration
-                    </p>
-                    <div class="card-stats">
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">95%</span>
-                            <div class="stat-label text-white">Legal Protection</div>
-                        </div>
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">Low</span>
-                            <div class="stat-label text-white">Eviction Risk</div>
-                        </div>
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">Full</span>
-                            <div class="stat-label text-white">RDC Access</div>
-                        </div>
-                    </div>
-                    <ul class="space-y-3 text-white mt-4">
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <span><span class="font-semibold">Legal Standing:</span> Fully valid and recognized by the Dubai Land Department (DLD).</span>
-                        </li>
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <span><span class="font-semibold">Eviction Risk:</span> Very low. Can only be evicted for legal reasons (e.g., not paying rent).</span>
-                        </li>
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <span><span class="font-semibold">Dispute Resolution:</span> Full access to the Rental Disputes Centre (RDC).</span>
-                        </li>
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"/>
-                                </svg>
-                            </div>
-                            <span><span class="font-semibold">Security Deposit:</span> Legally protected. You can file a case at the RDC to get it back.</span>
-                        </li>
-                    </ul>
                 </div>
-                <div class="card danger-card card-interactive">
-                    <div class="flex items-center mb-4">
-                        <div class="card-icon">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
-                            </svg>
+            </div>
+            
+            <!-- Cost Calculators -->
+            <div id="cost-calculators" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                    Cost Calculators
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="card feature-card card-glow card-interactive cursor-pointer" onclick="openModal('rentCalculatorModal')">
+                        <div class="text-center">
+                            <div class="card-icon text-4xl mb-4">📈</div>
+                            <h4 class="card-title text-white">Rent Calculator</h4>
+                            <p class="text-white text-opacity-80 mb-4">Calculate true monthly costs with all fees included</p>
+                            <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg">
+                                Calculate →
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="card warning-card card-glow card-interactive cursor-pointer" onclick="openModal('depositCalculatorModal')">
+                        <div class="text-center">
+                            <div class="card-icon text-4xl mb-4">🛡️</div>
+                            <h4 class="card-title text-white">Deposit Analyzer</h4>
+                            <p class="text-white text-opacity-80 mb-4">Check if your deposit is reasonable or a red flag</p>
+                            <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg">
+                                Analyze →
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="card success-card card-glow card-interactive cursor-pointer" onclick="openModal('costsBreakdownModal')">
+                        <div class="text-center">
+                            <div class="card-icon text-4xl mb-4">💰</div>
+                            <h4 class="card-title text-white">Total Cost Calculator</h4>
+                            <p class="text-white text-opacity-80 mb-4">Complete first-year budget including all expenses</p>
+                            <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg">
+                                Calculate →
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden Fees Breakdown -->
+            <div id="hidden-fees" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                    Hidden Fees Breakdown
+                </h3>
+                <div class="card max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-orange-600 mb-3">Common Hidden Costs</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li class="flex justify-between"><span>• Ejari Registration:</span> <strong>AED 220</strong></li>
+                                <li class="flex justify-between"><span>• Housing Fee (5% annual):</span> <strong>Variable</strong></li>
+                                <li class="flex justify-between"><span>• DEWA Deposit:</span> <strong>AED 1,000-2,000</strong></li>
+                                <li class="flex justify-between"><span>• Agent Commission:</span> <strong>5% of annual rent</strong></li>
+                                <li class="flex justify-between"><span>• Internet Setup:</span> <strong>AED 200-500</strong></li>
+                            </ul>
                         </div>
                         <div>
-                            <h3 class="text-xl font-bold text-white">INFORMAL & RISKY</h3>
-                            <span class="inline-block bg-white bg-opacity-20 text-white text-xs font-semibold px-3 py-1 rounded-full mt-1">⚠️ High Risk</span>
+                            <h4 class="font-bold text-red-600 mb-3">Watch Out For</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• "Processing fees" for basic services</li>
+                                <li>• Mandatory cleaning charges</li>
+                                <li>• Key replacement fees</li>
+                                <li>• Administrative charges</li>
+                                <li>• Parking fees not mentioned upfront</li>
+                            </ul>
                         </div>
                     </div>
-                    <p class="text-white mb-4 bg-white bg-opacity-10 p-3 rounded-lg">
-                        Agreement with primary tenant only, without Landlord NOC
-                    </p>
-                    <div class="card-stats">
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">5%</span>
-                            <div class="stat-label text-white">Legal Protection</div>
-                        </div>
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">High</span>
-                            <div class="stat-label text-white">Eviction Risk</div>
-                        </div>
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">None</span>
-                            <div class="stat-label text-white">RDC Access</div>
+                    <div class="mt-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-sm text-yellow-800"><strong>Pro Tip:</strong> Always ask for a complete breakdown of ALL costs before signing anything. Hidden fees can add 20-30% to your actual monthly expenses.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Due Diligence Checklist (Current) -->
+        <section id="checklist">
+            <h2 class="section-title">The Tenant's Ultimate Checklist</h2>
+            <p class="section-subtitle">Use this interactive checklist to protect yourself. Do not proceed with any rental until you can tick all the boxes in the "Non-Negotiable" section.</p>
+            
+            <!-- Progress indicator -->
+            <div class="max-w-4xl mx-auto mb-6">
+                <div class="checklist-progress bg-white p-4 rounded-lg shadow">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-semibold text-slate-600">Progress</span>
+                        <span class="text-sm text-slate-500" id="progress-text">0 of 9 items verified</span>
+                    </div>
+                    <div class="progress-bar bg-gray-200 rounded-full h-3 overflow-hidden">
+                        <div class="progress-fill bg-gradient-to-r from-green-400 to-blue-500 h-full transition-all duration-500" style="width: 0%" id="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card max-w-4xl mx-auto">
+                <div id="checklist-container">
+                    <div class="bg-gradient-to-r from-red-500 to-pink-500 text-white p-6 rounded-lg mb-6">
+                        <h3 class="text-xl font-bold mb-2 flex items-center">
+                            <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+                                🚨
+                            </div>
+                            Part 1: The Non-Negotiable Due Diligence
+                        </h3>
+                        <p class="text-red-100">These steps are mandatory. Skip them at your own risk.</p>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border-l-4 border-blue-500">
+                        <input type="checkbox" id="check1" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-blue-800">View the Primary Tenant's Ejari.</span>
+                                <button class="info-btn" onclick="openModal('modal1')">i</button>
+                            </div>
+                            <p class="text-sm text-slate-600">Ask to see the main, official tenancy contract between the person you're dealing with and the property owner.</p>
                         </div>
                     </div>
-                    <ul class="space-y-3 text-white mt-4">
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border-l-4 border-purple-500">
+                        <input type="checkbox" id="check2" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-purple-800">View the Property Owner's Title Deed.</span>
+                                <button class="info-btn" onclick="openModal('modal2')">i</button>
                             </div>
-                            <span><span class="font-semibold">Legal Standing:</span> Voidable by the property owner. Not recognized by the DLD.</span>
-                        </li>
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
+                            <p class="text-sm text-slate-600">This proves who legally owns the property. The name must match the landlord's name on the Ejari.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border-l-4 border-red-500">
+                        <input type="checkbox" id="check3" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-red-800">Obtain the Owner's Written NOC.</span>
+                                <button class="info-btn" onclick="openModal('modal3')">i</button>
                             </div>
-                            <span><span class="font-semibold">Eviction Risk:</span> Extremely high. Can be evicted immediately if the owner finds out.</span>
-                        </li>
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
+                            <p class="text-sm text-slate-600">This is the most critical document. It's the owner's written permission for the sublet. If they can't provide it, walk away immediately.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-blue-500 to-teal-500 text-white p-6 rounded-lg my-6">
+                        <h3 class="text-xl font-bold mb-2 flex items-center">
+                            <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+                                📋
                             </div>
-                            <span><span class="font-semibold">Dispute Resolution:</span> NO access to the RDC. Your contract is worthless there.</span>
-                        </li>
-                        <li class="flex items-start bg-white bg-opacity-10 p-3 rounded-lg">
-                            <div class="w-6 h-6 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3 flex-shrink-0 mt-0.5">
-                                <svg class="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                                </svg>
+                            Part 2: The Agreement & Financials
+                        </h3>
+                        <p class="text-blue-100">Important steps to secure your interests and document the arrangement.</p>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg border-l-4 border-green-500">
+                        <input type="checkbox" id="check4" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-green-800">Get a Written Agreement.</span>
+                                <button class="info-btn" onclick="openModal('modal4')">i</button>
                             </div>
-                            <span><span class="font-semibold">Security Deposit:</span> At the mercy of the primary tenant. No legal way to recover it via tenancy law.</span>
-                        </li>
+                            <p class="text-sm text-slate-600">Even if informal, it's better than nothing. It should detail all terms.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg border-l-4 border-yellow-500">
+                        <input type="checkbox" id="check5" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-yellow-800">Clarify All Costs.</span>
+                                <button class="info-btn" onclick="openModal('modal5')">i</button>
+                            </div>
+                            <p class="text-sm text-slate-600">Is rent "all-inclusive"? What about DEWA, internet, cleaning fees? Get a clear breakdown in writing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg border-l-4 border-indigo-500">
+                        <input type="checkbox" id="check6" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-indigo-800">Understand the Security Deposit.</span>
+                            </div>
+                            <p class="text-sm text-slate-600">Know the exact amount and the conditions for its full return. Remember, in an illegal sublet, this money is at very high risk.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-teal-50 to-cyan-50 rounded-lg border-l-4 border-teal-500">
+                        <input type="checkbox" id="check7" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-teal-800">Confirm House Rules.</span>
+                            </div>
+                            <p class="text-sm text-slate-600">Discuss and document rules for guests, kitchen use, cleaning, noise, etc., before you move in.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-pink-50 to-rose-50 rounded-lg border-l-4 border-pink-500">
+                        <input type="checkbox" id="check8" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-pink-800">Insist on Co-Occupant Registration.</span>
+                            </div>
+                            <p class="text-sm text-slate-600">Ask the primary tenant to add you as a co-occupant via the Dubai REST app. This makes your presence legally visible to the authorities.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="checklist-item bg-gradient-to-r from-amber-50 to-yellow-50 rounded-lg border-l-4 border-amber-500">
+                        <input type="checkbox" id="check9" class="checklist-checkbox">
+                        <div class="checklist-content">
+                            <div class="checklist-title">
+                                <span class="font-semibold text-amber-800">Verify the Primary Tenant's Identity.</span>
+                            </div>
+                            <p class="text-sm text-slate-600">Cross-check their Emirates ID against the name on the Ejari contract. Scammers often pose as tenants of properties they don't actually rent.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Red Flags & Warnings (Expanded) -->
+        <section id="red-flags">
+            <h2 class="section-title">Red Flags & Warnings</h2>
+            <p class="section-subtitle">Spot scams, illegal rental patterns, and know what to do in emergencies.</p>
+            
+            <!-- Common Scams -->
+            <div id="common-scams" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
+                    Common Scams to Avoid
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card bg-gradient-to-br from-red-50 to-orange-100 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mr-3">
+                                🕵️
+                            </div>
+                            <h4 class="font-bold text-lg text-red-800">Vague or Defensive "Landlord"</h4>
+                        </div>
+                        <p class="text-sm text-slate-700">Refuses to show you the Title Deed, their Ejari, or the owner's NOC. Gets defensive when you ask for these documents.</p>
+                        <div class="mt-3 inline-block bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            🚨 IMMEDIATE WALKAWAY
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-gradient-to-br from-orange-50 to-red-100 border-l-4 border-orange-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mr-3">
+                                📝
+                            </div>
+                            <h4 class="font-bold text-lg text-orange-800">Suspicious Ad Language</h4>
+                        </div>
+                        <p class="text-sm text-slate-700">Look out for terms like "partition" (illegal) or "bed space" (often illegal overcrowding). The more granular the offering, the higher the risk.</p>
+                        <div class="mt-3 flex flex-wrap gap-1">
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded">partition</span>
+                            <span class="bg-orange-100 text-orange-800 text-xs font-semibold px-2 py-1 rounded">bed space</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-gradient-to-br from-yellow-50 to-orange-100 border-l-4 border-yellow-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full flex items-center justify-center mr-3">
+                                ⏰
+                            </div>
+                            <h4 class="font-bold text-lg text-yellow-800">Pressure to Pay Upfront</h4>
+                        </div>
+                        <p class="text-sm text-slate-700">Scammers create false urgency, pressuring you to transfer deposits to "secure" rooms you haven't verified.</p>
+                        <div class="mt-3 inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            ⚠️ CLASSIC SCAM TACTIC
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-gradient-to-br from-purple-50 to-pink-100 border-l-4 border-purple-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mr-3">
+                                👻
+                            </div>
+                            <h4 class="font-bold text-lg text-purple-800">Fake Agents & Ghost Listings</h4>
+                        </div>
+                        <p class="text-sm text-slate-700">Never transfer money before viewing the property in person and verifying the agent's RERA credentials.</p>
+                        <div class="mt-3 inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            💸 MONEY LOST FOREVER
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-gradient-to-br from-indigo-50 to-purple-100 border-l-4 border-indigo-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full flex items-center justify-center mr-3">
+                                🎭
+                            </div>
+                            <h4 class="font-bold text-lg text-indigo-800">The "Bait and Switch"</h4>
+                        </div>
+                        <p class="text-sm text-slate-700">Actual living conditions drastically different from the ad. More people, less clean, sudden new rules.</p>
+                        <div class="mt-3 inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full">
+                            🔍 ALWAYS INSPECT FIRST
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-gradient-to-br from-green-500 to-teal-500 text-white border-l-4 border-green-600 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-3">
+                                🚶
+                            </div>
+                            <h4 class="font-bold text-lg">Your Most Powerful Tool</h4>
+                        </div>
+                        <p class="text-lg font-semibold mb-2">The ability to <span class="bg-white bg-opacity-20 px-2 py-1 rounded font-extrabold">WALK AWAY</span></p>
+                        <p class="text-sm text-green-100">If a deal feels wrong or paperwork isn't right, refuse it. Better opportunities will come.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Illegal Rental Patterns -->
+            <div id="illegal-patterns" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                    Illegal Rental Patterns
+                </h3>
+                <div class="card max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-bold text-red-600 mb-3">🚨 Red Flag Indicators</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Too many people in one unit (overcrowding)</li>
+                                <li>• Makeshift room divisions (partitions)</li>
+                                <li>• No proper lease documentation</li>
+                                <li>• Landlord can't provide NOC</li>
+                                <li>• Cash-only transactions</li>
+                                <li>• Unreasonably low deposits</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-orange-600 mb-3">⚠️ Legal Consequences</h4>
+                            <ul class="space-y-2 text-sm text-slate-600">
+                                <li>• Immediate eviction risk</li>
+                                <li>• Loss of security deposit</li>
+                                <li>• No legal recourse</li>
+                                <li>• Potential fines for illegal occupancy</li>
+                                <li>• Difficulty finding new accommodation</li>
+                                <li>• Impact on visa status</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Emergency Contacts -->
+            <div id="emergency-contacts" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Emergency Contacts & Resources
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card bg-gradient-to-br from-blue-50 to-indigo-50 border-l-4 border-blue-500">
+                        <h4 class="font-bold text-blue-600 mb-3">🏢 Government Agencies</h4>
+                        <div class="space-y-2 text-sm text-slate-600">
+                            <div><strong>RDC Hotline:</strong> 800-REAL (7325)</div>
+                            <div><strong>DLD Customer Service:</strong> 600-545-555</div>
+                            <div><strong>RERA:</strong> 600-567-275</div>
+                            <div><strong>Dubai Municipality:</strong> 800-900</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-gradient-to-br from-green-50 to-emerald-50 border-l-4 border-green-500">
+                        <h4 class="font-bold text-green-600 mb-3">⚖️ Legal Help</h4>
+                        <div class="space-y-2 text-sm text-slate-600">
+                            <div><strong>Dubai Courts:</strong> 04-393-8383</div>
+                            <div><strong>Legal Aid:</strong> 800-3333</div>
+                            <div><strong>Consumer Protection:</strong> 600-545-555</div>
+                            <div><strong>Anti-Fraud Hotline:</strong> 800-4888</div>
+                        </div>
+                    </div>
+                    
+                    <div class="card bg-gradient-to-br from-red-50 to-pink-50 border-l-4 border-red-500">
+                        <h4 class="font-bold text-red-600 mb-3">🚨 Emergency Services</h4>
+                        <div class="space-y-2 text-sm text-slate-600">
+                            <div><strong>Police Emergency:</strong> 999</div>
+                            <div><strong>Dubai Police:</strong> 04-609-6999</div>
+                            <div><strong>Tourist Police:</strong> 800-243</div>
+                            <div><strong>Women & Child Dept:</strong> 800-988</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-500">
+                    <h4 class="font-bold text-yellow-800 mb-2">📞 When to Call</h4>
+                    <ul class="text-sm text-yellow-700 space-y-1">
+                        <li>• <strong>Immediate danger or threats:</strong> Call 999 first</li>
+                        <li>• <strong>Rental disputes with legal contracts:</strong> RDC Hotline</li>
+                        <li>• <strong>Illegal rental practices:</strong> Dubai Municipality</li>
+                        <li>• <strong>Fraud or scams:</strong> Anti-Fraud Hotline</li>
+                        <li>• <strong>Visa or legal issues:</strong> Legal Aid</li>
                     </ul>
                 </div>
             </div>
@@ -1277,68 +1896,6 @@
                             🛡️
                         </div>
                         <div>
-                            <h3 class="card-title text-white">Deposit Calculator</h3>
-                            <div class="card-subtitle text-white text-opacity-80">Risk Assessment Tool</div>
-                        </div>
-                    </div>
-                    <div class="space-y-3 mt-4">
-                        <div class="bg-white bg-opacity-10 p-3 rounded-lg text-center">
-                            <p class="text-sm text-white"><span class="font-semibold">Legal Standard:</span> Calculate correct deposit amounts based on property type.</p>
-                        </div>
-                        <div class="bg-white bg-opacity-20 p-3 rounded-lg border border-white border-opacity-20 text-center">
-                            <p class="text-sm text-white"><span class="font-semibold">Scam Detection:</span> Identify suspiciously low deposits that indicate fraud.</p>
-                        </div>
-                        <div class="text-center">
-                            <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg text-sm backdrop-blur-sm">
-                                Click to Analyze →
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card success-card card-glow card-interactive cursor-pointer" onclick="openModal('costsBreakdownModal')">
-                    <div class="card-horizontal">
-                        <div class="card-icon">
-                            💰
-                        </div>
-                        <div>
-                            <h3 class="card-title text-white">Total Costs Calculator</h3>
-                            <div class="card-subtitle text-white text-opacity-80">Complete Budget Planner</div>
-                        </div>
-                    </div>
-                    <div class="card-stats mt-4">
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">5%</span>
-                            <div class="stat-label text-white">Agent Commission</div>
-                        </div>
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">2K</span>
-                            <div class="stat-label text-white">DEWA Deposit (AED)</div>
-                        </div>
-                        <div class="stat-item bg-white bg-opacity-20">
-                            <span class="stat-number text-white">220</span>
-                            <div class="stat-label text-white">Ejari Fee (AED)</div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-4">
-                        <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg text-sm backdrop-blur-sm">
-                            Calculate All Costs →
-                        </span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section: The 2025 Smart Rental Index -->
-        <section id="smart-rental-index" class="mt-24">
-            <h2 class="section-title">New for 2025: The Smart Rental Index</h2>
-            <p class="section-subtitle">Dubai's new AI-driven rental valuation system is changing how rent increases are calculated, giving tenants more power to challenge unfair hikes.</p>
-            <div class="card card-glow frame-bordered max-w-4xl mx-auto cursor-pointer" onclick="openModal('smartIndexModal')">
-                <div class="card-horizontal mb-6">
-                    <div class="card-icon">
-                        🤖
-                    </div>
-                    <div>
                         <h3 class="card-title text-center">What Changed on January 1, 2025?</h3>
                         <div class="card-subtitle text-center">AI-Powered Rental Valuations</div>
                     </div>
@@ -1360,15 +1917,6 @@
                         <div class="card-stats mt-4">
                             <div class="stat-item bg-white bg-opacity-20">
                                 <span class="stat-number text-white">AI</span>
-                                <div class="stat-label text-white">Powered</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-6 bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400 text-center">
-                    <p class="text-sm"><span class="font-bold">Click to explore:</span> Learn how to use the Smart Index to challenge unfair rent increases and protect your wallet.</p>
-                    <span class="inline-block mt-3 text-blue-600 font-semibold">Open Smart Index Calculator →</span>
-                </div>
             </div>
         </section>
 
@@ -1378,22 +1926,6 @@
             <p class="section-subtitle">If you have a dispute with your landlord, there is only one place to go for a legally binding resolution: The Rental Disputes Resolution Centre (RDC). But there's a catch.</p>
             <div class="card max-w-2xl mx-auto text-center">
                 <div class="p-8">
-                    <svg class="mx-auto h-20 w-20 text-red-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                    </svg>
-                    <h3 class="text-3xl font-bold text-slate-800 mt-4">No Ejari, No Entry.</h3>
-                    <p class="mt-4 text-lg text-slate-600">The RDC will <span class="font-bold text-red-600">NOT</span> accept or hear any case without a valid, registered Ejari contract. This is an absolute rule.</p>
-                    <p class="mt-4 text-slate-500">Your informal room rental agreement is legally powerless at the RDC. This means you have no official recourse for withheld deposits, unfair eviction, or any other tenancy issue. You are on your own.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section 8: Market Red Flags -->
-        <section id="red-flags">
-            <h2 class="section-title">Market Red Flags: How to Spot a Bad Deal</h2>
-            <p class="section-subtitle">The informal rental market is full of pitfalls. Learn to recognize the warning signs before you commit your time and money.</p>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card bg-gradient-to-br from-red-50 to-pink-100 border-l-4 border-red-500 hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                     <div class="flex items-center mb-3">
                         <div class="w-10 h-10 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mr-3">
                             🕵️
@@ -1476,6 +2008,194 @@
             </div>
         </section>
 
+        <!-- Resources & Support (New) -->
+        <section id="resources">
+            <h2 class="section-title">Resources & Support</h2>
+            <p class="section-subtitle">Access document templates, get answers to common questions, and find professional help.</p>
+            
+            <!-- Document Templates -->
+            <div id="document-templates" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    Document Templates
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="card hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📄</div>
+                            <h4 class="card-title">Room Rental Agreement</h4>
+                            <p class="text-sm text-slate-600 mb-4">Basic template for shared accommodation agreements</p>
+                            <button class="btn-action">Download Template</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">📋</div>
+                            <h4 class="card-title">NOC Request Letter</h4>
+                            <p class="text-sm text-slate-600 mb-4">Template to request landlord's permission for subletting</p>
+                            <button class="btn-action">Download Template</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card hover:shadow-xl transition-all duration-300">
+                        <div class="text-center">
+                            <div class="text-4xl mb-4">✅</div>
+                            <h4 class="card-title">Move-In Checklist</h4>
+                            <p class="text-sm text-slate-600 mb-4">Document property condition and inventory</p>
+                            <button class="btn-action">Download Checklist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div id="faq-section" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
+                    Frequently Asked Questions
+                </h3>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <div class="card">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 p-4">
+                                <span>What if the landlord refuses to provide an NOC?</span>
+                                <span class="transition-transform group-open:rotate-180">▼</span>
+                            </summary>
+                            <div class="px-4 pb-4 text-sm text-slate-600">
+                                <p>If a landlord refuses to provide a written NOC, the sublet is illegal. You should not proceed with the rental as you'll have no legal protection. Look for alternatives where proper documentation is available.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="card">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 p-4">
+                                <span>Can I register for DEWA without an Ejari?</span>
+                                <span class="transition-transform group-open:rotate-180">▼</span>
+                            </summary>
+                            <div class="px-4 pb-4 text-sm text-slate-600">
+                                <p>No, DEWA requires a valid Ejari certificate for new connections. If you're in a shared arrangement, the primary tenant should handle DEWA, and you should pay your share as agreed.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="card">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 p-4">
+                                <span>What's a reasonable security deposit for a shared room?</span>
+                                <span class="transition-transform group-open:rotate-180">▼</span>
+                            </summary>
+                            <div class="px-4 pb-4 text-sm text-slate-600">
+                                <p>For shared rooms, deposits typically range from 1-2 months' rent. Anything significantly lower might indicate an illegal arrangement. Use our Deposit Analyzer tool to check if your deposit is reasonable.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="card">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 p-4">
+                                <span>How can I verify if an Ejari certificate is genuine?</span>
+                                <span class="transition-transform group-open:rotate-180">▼</span>
+                            </summary>
+                            <div class="px-4 pb-4 text-sm text-slate-600">
+                                <p>You can verify Ejari certificates through the Dubai REST app or by calling DLD customer service at 600-545-555. Check that all details match and the contract is current.</p>
+                            </div>
+                        </details>
+                    </div>
+                    
+                    <div class="card">
+                        <details class="group">
+                            <summary class="flex justify-between items-center cursor-pointer font-semibold text-slate-800 p-4">
+                                <span>What should I do if I'm already in an illegal rental?</span>
+                                <span class="transition-transform group-open:rotate-180">▼</span>
+                            </summary>
+                            <div class="px-4 pb-4 text-sm text-slate-600">
+                                <p>Start looking for legal alternatives immediately. Document all payments made, and try to negotiate with your current arrangement for time to find proper accommodation. Contact the emergency numbers listed if you face threats or unsafe conditions.</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Legal Help Directory -->
+            <div id="legal-help" class="mb-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Legal Help Directory
+                </h3>
+                <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto justify-items-center">
+                    <div class="card w-full max-w-md">
+                        <h4 class="font-bold text-purple-600 mb-3 text-center">🏛️ Government Resources</h4>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><strong>Rental Disputes Centre (RDC):</strong> 800-REAL (7325)</li>
+                            <li><strong>Dubai Land Department:</strong> 600-545-555</li>
+                            <li><strong>RERA (Real Estate Regulatory Agency):</strong> 600-567-275</li>
+                            <li><strong>Dubai Municipality:</strong> 800-900</li>
+                            <li><strong>Consumer Protection:</strong> 600-545-555</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card w-full max-w-md">
+                        <h4 class="font-bold text-pink-600 mb-3 text-center">⚖️ Legal Services</h4>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><strong>Dubai Courts Legal Aid:</strong> 800-3333</li>
+                            <li><strong>Emirates Bar Association:</strong> 04-331-3222</li>
+                            <li><strong>Free Legal Consultation:</strong> Available at Dubai Courts</li>
+                            <li><strong>Tenant Rights Organizations:</strong> Contact RDC for referrals</li>
+                            <li><strong>Pro Bono Legal Services:</strong> Available for qualifying cases</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-blue-50 rounded-lg border-l-4 border-blue-500 max-w-4xl mx-auto">
+                    <h4 class="font-bold text-blue-800 mb-2">💡 Getting Help</h4>
+                    <p class="text-sm text-blue-700">Always start with government resources (RDC, DLD) for rental issues. They provide free services and official guidance. For complex legal matters, consider consulting with a qualified attorney who specializes in UAE tenancy law.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-slate-800 via-slate-700 to-slate-800 text-slate-300 py-12 px-6 relative overflow-hidden">
+        <!-- Background pattern -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-10 left-10 w-20 h-20 bg-blue-400 rounded-full"></div>
+            <div class="absolute bottom-10 right-10 w-16 h-16 bg-purple-400 rounded-full"></div>
+            <div class="absolute top-1/2 left-1/4 w-12 h-12 bg-teal-400 rounded-full"></div>
+            <div class="absolute bottom-1/3 left-3/4 w-14 h-14 bg-pink-400 rounded-full"></div>
+        </div>
+        
+        <div class="container mx-auto text-center relative z-10">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text text-transparent mb-2">
+                    TenantShield Dubai
+                </h3>
+                <p class="text-slate-400">Protecting tenants through knowledge and awareness</p>
+            </div>
+            
+                <h3 class="card-title">Legal Help Directory</h3>
+                <p class="card-subtitle">Find legal professionals and organizations that can assist you.</p>
+                <!-- Placeholder for legal help contacts -->
+                <div class="sample-doc text-center">Coming soon: Curated list of legal resources and contacts</div>
+            </div>
+        </section>
+
+        <!-- Section 8: Legal Disclaimer & Updates -->
+        <section id="legal-disclaimer">
+            <h2 class="section-title">Legal Disclaimer & Updates</h2>
+            <p class="section-subtitle">Important information about the legal aspects of renting in Dubai and website updates.</p>
+            <!-- Disclaimer -->
+            <div class="bg-red-50 p-4 rounded-lg border-l-4 border-red-500 mb-6">
+                <h3 class="font-bold text-red-800 mb-2">🚨 Legal Disclaimer</h3>
+                <p class="text-sm text-red-700">This website provides general information about renting in Dubai. It is not legal advice. For specific legal issues, consult a qualified attorney.</p>
+            </div>
+            <!-- Updates -->
+            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                <h3 class="font-bold text-blue-800 mb-2">📅 Latest Updates</h3>
+                <p class="text-sm text-blue-700">Stay informed about the latest changes in Dubai's rental laws and regulations.</p>
+                <!-- Placeholder for update details -->
+                <div class="sample-doc text-center">Coming soon: Latest updates on Dubai rental laws</div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -1523,50 +2243,6 @@
                     <span class="inline-block bg-amber-100 text-amber-800 px-2 py-1 rounded text-xs font-semibold mr-2">Disclaimer</span>
                     This website provides a summary of information based on Dubai's tenancy laws and market practices. It is for informational purposes only and does not constitute legal advice. You should always consult with a legal professional for your specific situation.
                 </p>
-                <p class="text-xs mt-4 text-slate-600 bg-slate-700 inline-block px-3 py-1 rounded-full">
-                    Last Updated: July 2025 • Made with ❤️ for Dubai tenants
-                </p>
-            </div>
-        </div>
-    </footer>
-    
-    <script>
-        // Simple script to add a strikethrough to checked items
-        document.addEventListener('DOMContentLoaded', () => {
-            const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
-            checkboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', (event) => {
-                    const label = event.target.nextElementSibling;
-                    if (event.target.checked) {
-                        label.classList.add('line-through', 'text-slate-400');
-                    } else {
-                        label.classList.remove('line-through', 'text-slate-400');
-                    }
-                });
-            });
-        });
-    </script>
-
-    <!-- Modal 1: Ejari Certificate - Enhanced with comprehensive data -->
-<div id="modal1" class="modal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <span class="close" onclick="closeModal('modal1')">&times;</span>
-            <h2 class="text-3xl font-bold mb-2">📋 Understanding the Ejari Certificate</h2>
-            <p class="text-blue-100 text-lg">Your gateway to legal tenancy in Dubai - Complete Guide</p>
-        </div>
-        <div class="modal-body">
-            <!-- Statistics Section -->
-            <div class="grid grid-cols-3 gap-4 mb-8">
-                <div class="data-stat">
-                    <span class="data-stat-number">100%</span>
-                    <div class="data-stat-label">Required for Legal Tenancy</div>
-                </div>
-                <div class="data-stat">
-                    <span class="data-stat-number">24hrs</span>
-                    <div class="data-stat-label">Processing Time</div>
-                </div>
-                <div class="data-stat">
                     <span class="data-stat-number">AED 220</span>
                     <div class="data-stat-label">Registration Cost</div>
                 </div>
@@ -1701,7 +2377,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close" onclick="closeModal('modal2')">&times;</span>
-            <h2 class="text-3xl font-bold mb-2">🏠 Property Title Deed Verification</h2>
+            <h2 class="text-3xl font-bold mb-2 text-center">🏠 Property Title Deed Verification</h2>
             <p class="text-blue-100 text-lg">The ultimate proof of property ownership</p>
         </div>
         <div class="modal-body">
@@ -1869,7 +2545,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close" onclick="closeModal('modal3')">&times;</span>
-            <h2 class="text-3xl font-bold mb-2">🚨 Owner's NOC (No Objection Certificate)</h2>
+            <h2 class="text-3xl font-bold mb-2 text-center">🚨 Owner's NOC (No Objection Certificate)</h2>
             <p class="text-red-100 text-lg">The single most critical document for legal subletting</p>
         </div>
         <div class="modal-body">
@@ -2068,7 +2744,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close" onclick="closeModal('modal4')">&times;</span>
-            <h2 class="text-3xl font-bold mb-2">📋 Written Agreement Best Practices</h2>
+            <h2 class="text-3xl font-bold mb-2 text-center">📋 Written Agreement Best Practices</h2>
             <p class="text-green-100 text-lg">Document everything to protect your interests</p>
         </div>
         <div class="modal-body">
@@ -2325,7 +3001,7 @@
     <div class="modal-content">
         <div class="modal-header">
             <span class="close" onclick="closeModal('modal5')">&times;</span>
-            <h2 class="text-2xl font-bold">Complete Cost Breakdown</h2>
+            <h2 class="text-2xl font-bold text-center">Complete Cost Breakdown</h2>
             <p class="text-blue-100 mt-2">Understanding all fees and hidden costs</p>
         </div>
         <div class="modal-body">
@@ -3432,7 +4108,70 @@
         });
     }
 
-    // Checklist functionality
+    // Quiz functionality
+    function initializeQuiz() {
+        const quizCheckboxes = document.querySelectorAll('#quick-start input[type="checkbox"]');
+        const quizResult = document.getElementById('quiz-result');
+        
+        quizCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateQuizResult);
+        });
+        
+        function updateQuizResult() {
+            const checkedBoxes = document.querySelectorAll('#quick-start input[type="checkbox"]:checked').length;
+            const totalBoxes = quizCheckboxes.length;
+            const percentage = Math.round((checkedBoxes / totalBoxes) * 100);
+            
+            let resultText = '';
+            let resultClass = '';
+            
+            if (percentage === 100) {
+                resultText = '✅ Excellent! You\'re well-protected. Proceed with confidence.';
+                resultClass = 'bg-green-100 text-green-800';
+            } else if (percentage >= 75) {
+                resultText = '⚠️ Good start, but complete all steps for full protection.';
+                resultClass = 'bg-yellow-100 text-yellow-800';
+            } else if (percentage >= 50) {
+                resultText = '🚨 You\'re at moderate risk. Review missing items carefully.';
+                resultClass = 'bg-orange-100 text-orange-800';
+            } else {
+                resultText = '🚨 HIGH RISK! Do not proceed until you complete these checks.';
+                resultClass = 'bg-red-100 text-red-800';
+            }
+            
+            quizResult.className = `text-sm font-semibold p-3 rounded ${resultClass}`;
+            quizResult.textContent = `Protection Level: ${percentage}% - ${resultText}`;
+            quizResult.classList.remove('hidden');
+        }
+    }
+
+    // Enhanced checklist progress tracking
+    function updateProgress() {
+        const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
+        const checked = document.querySelectorAll('#checklist-container input[type="checkbox"]:checked').length;
+        const total = checkboxes.length;
+        const percentage = Math.round((checked / total) * 100);
+        
+        const progressFill = document.getElementById('progress-fill');
+        const progressText = document.getElementById('progress-text');
+        
+        if (progressFill) {
+            progressFill.style.width = `${percentage}%`;
+        }
+        
+        if (progressText) {
+            progressText.textContent = `${checked} of ${total} items verified`;
+        }
+        
+        // Show completion celebration
+        if (percentage === 100) {
+            setTimeout(() => {
+                alert('🎉 Congratulations! You\'ve completed all verification steps. You\'re now well-protected against rental scams!');
+            }, 500);
+        }
+    }
+
+    // Enhanced checklist functionality
     function initializeChecklist() {
         const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
         
@@ -3442,24 +4181,16 @@
                 if (this.checked) {
                     item.style.opacity = '0.7';
                     item.style.transform = 'scale(0.98)';
+                    item.style.background = 'linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%)';
                 } else {
                     item.style.opacity = '1';
                     item.style.transform = 'scale(1)';
+                    item.style.background = '';
                 }
                 
                 updateProgress();
             });
         });
-    }
-
-    function updateProgress() {
-        const checkboxes = document.querySelectorAll('#checklist-container input[type="checkbox"]');
-        const checked = document.querySelectorAll('#checklist-container input[type="checkbox"]:checked').length;
-        const total = checkboxes.length;
-        const percentage = Math.round((checked / total) * 100);
-        
-        // You could add a progress bar here
-        console.log(`Progress: ${percentage}% (${checked}/${total})`);
     }
 
     // Enhanced card interactions
@@ -3498,6 +4229,7 @@
     // Initialize everything when DOM is loaded
     document.addEventListener('DOMContentLoaded', function() {
         initializeChecklist();
+        initializeQuiz();
         initializeCardEffects();
         initializeSmoothScrolling();
         initializeCalculators();
