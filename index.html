@@ -1330,7 +1330,7 @@
                 <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                     Smart Rental Index 2025
                 </h3>
-                <div class="card card-glow frame-bordered max-w-4xl mx-auto cursor-pointer" onclick="openModal('smartIndexModal')">
+                <div class="card card-glow frame-bordered max-w-5xl mx-auto cursor-pointer" onclick="openModal('smartIndexModal')">
                     <div class="text-center p-6">
                         <h4 class="card-title text-center">What Changed on January 1, 2025?</h4>
                         <div class="card-subtitle text-center">AI-Powered Rental Valuations</div>
@@ -1354,8 +1354,8 @@
                 <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-green-600 to-teal-600 bg-clip-text text-transparent">
                     Cost Calculators
                 </h3>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="card feature-card card-glow card-interactive cursor-pointer" onclick="openModal('rentCalculatorModal')">
+                <div class="grid md:grid-cols-3 gap-8 justify-items-center max-w-6xl mx-auto">
+                    <div class="card feature-card card-glow card-interactive cursor-pointer w-full max-w-sm" onclick="openModal('rentCalculatorModal')">
                         <div class="text-center">
                             <div class="card-icon text-4xl mb-4">📈</div>
                             <h4 class="card-title text-white">Rent Calculator</h4>
@@ -1366,7 +1366,7 @@
                         </div>
                     </div>
                     
-                    <div class="card warning-card card-glow card-interactive cursor-pointer" onclick="openModal('depositCalculatorModal')">
+                    <div class="card warning-card card-glow card-interactive cursor-pointer w-full max-w-sm" onclick="openModal('depositCalculatorModal')">
                         <div class="text-center">
                             <div class="card-icon text-4xl mb-4">🛡️</div>
                             <h4 class="card-title text-white">Deposit Analyzer</h4>
@@ -1377,7 +1377,7 @@
                         </div>
                     </div>
                     
-                    <div class="card success-card card-glow card-interactive cursor-pointer" onclick="openModal('costsBreakdownModal')">
+                    <div class="card success-card card-glow card-interactive cursor-pointer w-full max-w-sm" onclick="openModal('costsBreakdownModal')">
                         <div class="text-center">
                             <div class="card-icon text-4xl mb-4">💰</div>
                             <h4 class="card-title text-white">Total Cost Calculator</h4>
@@ -1396,8 +1396,8 @@
                     Hidden Fees Breakdown
                 </h3>
                 <div class="card max-w-4xl mx-auto">
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div>
+                    <div class="grid md:grid-cols-2 gap-6 justify-items-center">
+                        <div class="w-full max-w-md">
                             <h4 class="font-bold text-orange-600 mb-3">Common Hidden Costs</h4>
                             <ul class="space-y-2 text-sm text-slate-600">
                                 <li class="flex justify-between"><span>• Ejari Registration:</span> <strong>AED 220</strong></li>
@@ -1407,7 +1407,7 @@
                                 <li class="flex justify-between"><span>• Internet Setup:</span> <strong>AED 200-500</strong></li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="w-full max-w-md">
                             <h4 class="font-bold text-red-600 mb-3">Watch Out For</h4>
                             <ul class="space-y-2 text-sm text-slate-600">
                                 <li>• "Processing fees" for basic services</li>
@@ -1864,59 +1864,90 @@
         <section id="money-matters">
             <h2 class="section-title">Money Matters: Rent, Deposits & Hidden Fees</h2>
             <p class="section-subtitle">The financial landscape of renting in Dubai is more than just the monthly rent. Be aware of all potential costs to budget effectively and avoid surprises.</p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="card feature-card card-glow card-interactive cursor-pointer" onclick="openModal('rentCalculatorModal')">
-                    <div class="card-horizontal">
-                        <div class="card-icon">
-                            📈
+            <div class="flex justify-center">
+                <div class="grid md:grid-cols-2 gap-8 max-w-4xl">
+                    <div class="card feature-card card-glow card-interactive cursor-pointer" onclick="openModal('rentCalculatorModal')">
+                        <div class="card-horizontal">
+                            <div class="card-icon">
+                                📈
+                            </div>
+                            <div>
+                                <h3 class="card-title text-white">Rent Calculator</h3>
+                                <div class="card-subtitle text-white text-opacity-80">Calculate Your Budget</div>
+                            </div>
                         </div>
-                        <div>
-                            <h3 class="card-title text-white">Rent Calculator</h3>
-                            <div class="card-subtitle text-white text-opacity-80">Calculate Your Budget</div>
-                        </div>
-                    </div>
-                    <div class="space-y-3 mt-4">
-                        <div class="bg-white bg-opacity-10 p-3 rounded-lg text-center">
-                            <p class="text-sm text-white"><span class="font-semibold">Smart Calculator:</span> Get accurate budget estimates with hidden costs included.</p>
-                        </div>
-                        <div class="bg-white bg-opacity-10 p-3 rounded-lg text-center">
-                            <p class="text-sm text-white"><span class="font-semibold">Legal Limits:</span> Check if rent increases comply with DLD Smart Index.</p>
-                        </div>
-                        <div class="text-center">
-                            <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg text-sm backdrop-blur-sm">
-                                Click to Calculate →
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="card warning-card card-glow card-interactive cursor-pointer" onclick="openModal('depositCalculatorModal')">
-                    <div class="card-horizontal">
-                        <div class="card-icon">
-                            🛡️
-                        </div>
-                        <div>
-                        <h3 class="card-title text-center">What Changed on January 1, 2025?</h3>
-                        <div class="card-subtitle text-center">AI-Powered Rental Valuations</div>
-                    </div>
-                </div>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div class="card-gradient border-l-4 border-slate-400 pl-4 p-4 rounded-lg">
-                        <h4 class="font-bold text-slate-600 mb-2 text-center">OLD SYSTEM (Pre-2025)</h4>
-                        <p class="text-sm text-center">Simple area-based averages using the RERA Calculator</p>
-                        <div class="card-stats mt-4">
-                            <div class="stat-item">
-                                <span class="stat-number text-slate-600">Basic</span>
-                                <div class="stat-label">Analysis</div>
+                        <div class="space-y-3 mt-4">
+                            <div class="bg-white bg-opacity-10 p-3 rounded-lg text-center">
+                                <p class="text-sm text-white"><span class="font-semibold">Smart Calculator:</span> Get accurate budget estimates with hidden costs included.</p>
+                            </div>
+                            <div class="bg-white bg-opacity-10 p-3 rounded-lg text-center">
+                                <p class="text-sm text-white"><span class="font-semibold">Legal Limits:</span> Check if rent increases comply with DLD Smart Index.</p>
+                            </div>
+                            <div class="text-center">
+                                <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg text-sm backdrop-blur-sm">
+                                    Click to Calculate →
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <div class="feature-card border-l-4 border-blue-600 pl-4 p-4 rounded-lg">
-                        <h4 class="font-bold text-white mb-2 text-center">NEW SYSTEM (2025+)</h4>
-                        <p class="text-sm text-white text-center">AI-powered analysis considering building quality, maintenance, amenities, and location</p>
-                        <div class="card-stats mt-4">
-                            <div class="stat-item bg-white bg-opacity-20">
-                                <span class="stat-number text-white">AI</span>
+                    
+                    <div class="card warning-card card-glow card-interactive cursor-pointer" onclick="openModal('depositCalculatorModal')">
+                        <div class="card-horizontal">
+                            <div class="card-icon">
+                                🛡️
+                            </div>
+                            <div>
+                                <h3 class="card-title text-white">Deposit Calculator</h3>
+                                <div class="card-subtitle text-white text-opacity-80">Security & Damage Deposits</div>
+                            </div>
+                        </div>
+                        <div class="space-y-3 mt-4">
+                            <div class="bg-white bg-opacity-10 p-3 rounded-lg text-center">
+                                <p class="text-sm text-white"><span class="font-semibold">Know Your Rights:</span> Maximum 5% of annual rent as security deposit.</p>
+                            </div>
+                            <div class="bg-white bg-opacity-10 p-3 rounded-lg text-center">
+                                <p class="text-sm text-white"><span class="font-semibold">Get It Back:</span> Calculate return timeline and deductions.</p>
+                            </div>
+                            <div class="text-center">
+                                <span class="inline-block bg-white bg-opacity-20 text-white font-semibold py-2 px-4 rounded-lg text-sm backdrop-blur-sm">
+                                    Click to Calculate →
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- What Changed Section -->
+            <div class="mt-12">
+                <h3 class="text-2xl font-bold text-center mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    What Changed on January 1, 2025?
+                </h3>
+                <p class="text-center text-slate-600 mb-8">AI-Powered Rental Valuations</p>
+                <div class="flex justify-center">
+                    <div class="grid md:grid-cols-2 gap-6 justify-items-center w-full max-w-2xl">
+                        <div class="card border-l-4 border-slate-400 w-full max-w-sm mx-auto">
+                            <h4 class="font-bold text-slate-600 mb-2 text-center">OLD SYSTEM (Pre-2025)</h4>
+                            <p class="text-sm text-center text-slate-600">Simple area-based averages using the RERA Calculator</p>
+                            <div class="card-stats mt-4">
+                                <div class="stat-item">
+                                    <span class="stat-number text-slate-600">Basic</span>
+                                    <div class="stat-label">Analysis</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card border-l-4 border-blue-600 w-full max-w-sm mx-auto">
+                            <h4 class="font-bold text-blue-600 mb-2 text-center">NEW SYSTEM (2025+)</h4>
+                            <p class="text-sm text-center text-slate-600">AI-powered analysis considering building quality, maintenance, amenities, and location</p>
+                            <div class="card-stats mt-4">
+                                <div class="stat-item">
+                                    <span class="stat-number text-blue-600">AI</span>
+                                    <div class="stat-label">Powered</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
